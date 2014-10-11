@@ -22,19 +22,25 @@ plot3.1 <- data_clean[,c(10,7)]
 plot3.2 <- data_clean[,c(10,8)]
 plot3.3 <- data_clean[,c(10,9)]
 
-# -- Plot to view - remember to size plot window to capture full axes notations
-#plot(plot3.1, type = "l", xlab ="", ylab = "Energy sub metering") 
-#lines(plot3.2, col = "red")
-#lines(plot3.3, col = "blue")
-#legend("topright", lwd = 2, col = c("black", "red", "blue"), 
- #      legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
-
-# -- Plot to Export to PNG as plot1.png
-png("plot3.png")
+# -- Export plot to png -- to view plot use ### on line 26 & 45 then run
+png("plot4.png")
+# --- set 2 x 2 grid
+par(mfrow = c(2, 2), mar = c(4, 4, 4, 2))
+# -----plot upper-left ----
+plot(x=data_clean$DateTime, y=data_clean$GActiveP, type = "l", xlab ="",
+     ylab = "Global Active Power" )
+# -----plot uper-right ----
+plot(x=data_clean$DateTime, y=data_clean$Volt, type = "l", xlab ="datetime",
+     ylab = "Voltage" )
+# -----plot lower-left ----
 plot(plot3.1, type = "l", xlab ="", ylab = "Energy sub metering") 
 lines(plot3.2, col = "red")
 lines(plot3.3, col = "blue")
-legend("topright", lwd = 2,col = c("black", "red", "blue"), 
-       legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+legend("topright", bty = "n", lwd = 2, col = c("black", "red", "blue"), 
+      legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), cex = .9)
+# ----- plot lower-right ----
+plot(x=data_clean$DateTime, y=data_clean$GReactiveP, type = "l", xlab ="datetime",
+     ylab = "Global_Reactive_Power" )
+
 dev.off()
 
