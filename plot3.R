@@ -1,5 +1,4 @@
 setwd("~/Documents/Coursera/04-ExploratoryDataAnalysis/04_Projects/04_Proj1")
-library(data.table)
 # -- set dimensions based on data dictionary
 columndata <- matrix(c("Date", "Time", "Global_active_power", 
                        "Global_reactive_power", "Voltage", "Global_intensity",
@@ -20,11 +19,12 @@ data_clean <- data[data$Date == "1/2/2007" | data$Date == "2/2/2007",]
 data_clean$DateTime <- strptime(paste(data_clean$Date, data_clean$Time), format = "%d/%m/%Y %H:%M:%S")
 
 # -- Plot to view - remember to size plot window to capture full axes notations
-#plot(x=data_clean$DateTime, y=data_clean$GActiveP, type = "l", xlab ="",
- #  ylab = "Global Active Power (kilowatts)" )
+quartz(title='plot')
+plot(x=data_clean$DateTime[,1], y=data_clean$sub_1, type = "l", xlabel ="",
+  ylabel = "Energy sub metering") 
 
 # -- Plot to Export to PNG as plot1.png
-png("plot2.png")
+png("plot3.png")
 plot(x=data_clean$DateTime, y=data_clean$GActiveP, type = "l", xlab ="",
      ylab = "Global Active Power (kilowatts)" )
 dev.off()

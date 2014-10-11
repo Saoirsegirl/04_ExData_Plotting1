@@ -1,4 +1,4 @@
-setwd("~/Documents/Coursera/04 - Exploratory Data Analysis/04_Projects/04_Proj1")
+setwd("~/Documents/Coursera/04-ExploratoryDataAnalysis/04_Projects/04_Proj1")
 library(data.table)
 # -- import raw data and set dimensions based on data dictionary
 data <- read.table("household_power_consumption.txt", 
@@ -18,12 +18,12 @@ data_clean <- data.table(data)[data$Date == "1/2/2007" | data$Date == "2/2/2007"
 data_clean[,DateYMD:= as.Date(paste(data_clean$Date, data_clean$Time), 
                                 format = "%d/ %m/ %Y %T")] 
 
-# -- Plot to view - remember to size plot window to capture full axes notations
+# -- Plot to view - remove # to use - remember to size plot window to capture full axes notations
 # hist(data_clean$GActiveP, col = "red", 
-  #   main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
+        #   main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
 
 # -- Plot to Export to PNG as plot1.png
-png("plotx.png")
+png("plot1.png")
 hist(data_clean$GActiveP, col = "red", 
      main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
 #dev.copy(png, file = "plot1.png")
