@@ -1,5 +1,4 @@
 setwd("~/Documents/Coursera/04-ExploratoryDataAnalysis/04_Projects/04_Proj1")
-library(data.table)
 # -- set dimensions based on data dictionary
 columndata <- matrix(c("Date", "Time", "Global_active_power", 
                        "Global_reactive_power", "Voltage", "Global_intensity",

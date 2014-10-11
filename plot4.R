@@ -23,7 +23,7 @@ plot3.2 <- data_clean[,c(10,8)]
 plot3.3 <- data_clean[,c(10,9)]
 
 # -- Export plot to png -- to view plot use ### on line 26 & 45 then run
-png("plot4.png")
+png("plot4a.png")
 # --- set 2 x 2 grid
 par(mfrow = c(2, 2), mar = c(4, 4, 4, 2))
 # -----plot upper-left ----

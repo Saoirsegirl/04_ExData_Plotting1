@@ -30,7 +30,7 @@ plot3.3 <- data_clean[,c(10,9)]
  #      legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
 # -- Plot to Export to PNG as plot1.png
-png("plot3.png")
+png("plot3a.png")
 plot(plot3.1, type = "l", xlab ="", ylab = "Energy sub metering") 
 lines(plot3.2, col = "red")
 lines(plot3.3, col = "blue")
